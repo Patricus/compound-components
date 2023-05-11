@@ -34,9 +34,11 @@ function App() {
       {cards.map(card => (
         <CompoundCard
           key={card.id}
+          // We can pass in the card object as a prop to the CompoundCard component, and then access it in the sub-components using the context API
           card={card}
           image={<CompoundCard.Image />}
           info={
+            // Example of using sub-components in CompoundCard with children
             <CompoundCard.Info>
               <CompoundCard.Title />
               <CompoundCard.Desc />
@@ -51,7 +53,8 @@ function App() {
         info={
           <CompoundCard.Info>
             <CompoundCard.Title />
-            <CompoundCard.Desc />
+            {/* We can opt out of using sub-components without breaking the whole component */}
+            {/* <CompoundCard.Desc /> */}
           </CompoundCard.Info>
         }
         action={
